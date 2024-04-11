@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>mrgood | CRUD App</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+        <script src= "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" ></script>
+    </head>
+
+    <body>
+        <div>
+            <h1>Create New Student</h1>
+            <br/>
+
+            // --- form ---
+            <form action="#" th:action="@{/save}" th:object="${student}" method="post">
+                <div class="form-group">
+                    <label class="form-label" >Student ID</label>
+                    <input type="hidden" th:field="*{id}" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" >Student Name</label>
+                    <input type="text" th:field="*{name}" class="form-control" placeholder="Student Name" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" >Student Email</label>
+                    <input type="text" th:field="*{email}" class="form-control" placeholder="Student Email" />
+                </div>
+                <br></br>
+                    <button type="submit" class="btn btn-info">Save</button>
+            </form>
+        </div>
+    </body>
+</html>
